@@ -1,0 +1,21 @@
+div(
+  className=".messenger-message.message.alert "+type+" "+"message-"+type+" alert- "+ type
+)
+  if showCloseButton
+    button(
+      type="button"
+      className="messenger-close"
+      data-dismiss="alert"
+      onClick=cancel
+    )=closeButtonText
+    
+  .messenger-message-inner()=message
+  
+  if actions.length
+    .messenger-actions
+      for action in actions
+        span(
+          data-action=action.name
+        )
+          span.messenger-phrase
+          a=action.label
